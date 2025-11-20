@@ -15,8 +15,12 @@ spec:
       interval: 12h
   install:
     crds: CreateReplace
+    disableWait: true
+    timeout: 10m
   upgrade:
     crds: CreateReplace
+    disableWait: true
+    timeout: 10m
   values:
     vmsingle:
       enabled: true
