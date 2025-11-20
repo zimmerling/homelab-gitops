@@ -1,0 +1,13 @@
+# Secrets (never commit!)
+*.secret.yaml
+*-secret.yaml
+secrets/
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
