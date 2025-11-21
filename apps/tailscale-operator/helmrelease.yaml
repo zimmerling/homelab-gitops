@@ -23,17 +23,9 @@ spec:
     oauth:
       clientId: ""
       clientSecret: ""
+      secretName: "tailscale-oauth"
     operatorConfig:
       hostname: "tailscale-operator"
       logging: "info"
     apiServerProxyConfig:
       mode: "true"
-  valuesFrom:
-    - kind: Secret
-      name: tailscale-oauth
-      valuesKey: Tailscale-OAuth-Client-Id
-      targetPath: oauth.clientId
-    - kind: Secret
-      name: tailscale-oauth
-      valuesKey: Tailscale-OAuth-Client-Secret
-      targetPath: oauth.clientSecret
