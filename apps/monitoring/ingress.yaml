@@ -1,0 +1,44 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana
+  namespace: monitoring
+  annotations:
+    tailscale.com/hostname: "grafana"
+spec:
+  ingressClassName: tailscale
+  defaultBackend:
+    service:
+      name: vm-grafana
+      port:
+        number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vmsingle
+  namespace: monitoring
+  annotations:
+    tailscale.com/hostname: "vmsingle"
+spec:
+  ingressClassName: tailscale
+  defaultBackend:
+    service:
+      name: vmsingle-vm-victoria-metrics-k8s-stack
+      port:
+        number: 8428
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vmagent
+  namespace: monitoring
+  annotations:
+    tailscale.com/hostname: "vmagent"
+spec:
+  ingressClassName: tailscale
+  defaultBackend:
+    service:
+      name: vmagent-vm-victoria-metrics-k8s-stack
+      port:
+        number: 8429
