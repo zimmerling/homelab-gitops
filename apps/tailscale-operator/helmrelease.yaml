@@ -23,7 +23,6 @@ spec:
     oauth:
       clientId: ""
       clientSecret: ""
-      secretName: "tailscale-oauth"
     operatorConfig:
       hostname: "tailscale-operator"
       logging: "info"
