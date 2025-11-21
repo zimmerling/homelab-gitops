@@ -72,3 +72,27 @@ spec:
 
     defaultRules:
       create: true
+      rules:
+        # Disable heavy rules that cause query overload
+        kubeApiserverAvailability: false
+        kubeApiserverBurnrate: false
+        kubeApiserverHistogram: false
+        kubeApiserverSlos: false
+        kubePrometheusGeneral: false
+        kubePrometheusNodeRecording: false
+        kubeSchedulerAlerting: false
+        kubeSchedulerRecording: false
+        kubeStateMetrics: false
+        kubelet: false
+        kubernetesApps: false
+        kubernetesResources: false
+        kubernetesStorage: false
+        kubernetesSystem: false
+        node: false
+        nodeExporterAlerting: false
+        nodeExporterRecording: false
+        # Keep only basic VM monitoring rules
+        vmHealth: true
+        vmagent: true
+        vmsingle: true
+        alertmanager: true
