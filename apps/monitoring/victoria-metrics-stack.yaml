@@ -33,12 +33,22 @@ spec:
               storage: 20Gi
         resources:
           requests:
-            cpu: 50m
+            cpu: 200m
+            memory: 1Gi
+          limits:
+            memory: 2Gi
+
+    vmagent:
+      enabled: true
+      spec:
+        resources:
+          requests:
+            cpu: 100m
             memory: 256Mi
           limits:
             memory: 512Mi
 
-    vmagent:
+    vmalert:
       enabled: true
       spec:
         resources:
