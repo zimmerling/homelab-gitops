@@ -26,5 +26,9 @@ spec:
     operatorConfig:
       hostname: "tailscale-operator"
       logging: "info"
+      defaultTags:
+        - "tag:k8s"
+    proxyConfig:
+      defaultTags: "tag:k8s"
     apiServerProxyConfig:
       mode: "true"
